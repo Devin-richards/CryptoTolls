@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Crypto Tolls</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dark-theme.css"> {/* Added common dark theme stylesheet */}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Most styles are now in dark-theme.css */
+        /* Body, .page-header, .content-section, .cta-section, .btn-custom-accent 
+           are all defined in dark-theme.css and will apply. */
+        /* Specific overrides or minor adjustments for services.html can go here if necessary. */
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0A192F;">
+            <a class="navbar-brand" href="index.html">Crypto Tolls</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="services.html">Services <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="technology.html">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tokenization.html">Tokenization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="future.html">The Future</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#linkVehicleModal">Link Vehicle</a>
+                    </li>
+                </ul>
+                <button id="connectXumm" class="btn btn-outline-light mr-3">
+                    <img src="XRPL Logo Kit 2/svg/XRP Ledger - Purple Lettering.svg" alt="XRP Ledger Logo" style="width: 100px; height: auto;">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Our Services: Modernizing Your Mobility</h1>
+        </div>
+    </div>
+
+    <main class="container mt-5">
+        <section class="content-section text-center">
+            <p class="lead">At Crypto Tolls, we are committed to providing comprehensive, technology-driven solutions that redefine convenience and efficiency for road users and fleet managers alike. Our platform integrates cutting-edge features to ensure a seamless and superior experience on every journey.</p>
+        </section>
+
+        <section id="toll-payments" class="content-section">
+            <h2>Seamless Toll Payments</h2>
+            <p>Experience the future of tolling with our fully automated payment system. Say goodbye to cash lanes and last-minute scrambles for change. Our platform ensures your tolls are paid instantly and accurately as you pass through gantries, supporting travel across an ever-expanding network of states and tollways. We focus on making your drive smoother, allowing you to concentrate on the road ahead.</p>
+            <p><strong>Benefits:</strong> Enjoy significant time savings, potentially lower toll rates through early payment advantages, and eliminate the stress of manual toll payments. Our system is designed for maximum reliability and ease of use, making every trip more pleasant and cost-effective.</p>
+        </section>
+
+        <section id="account-management" class="content-section">
+            <h2>Comprehensive Toll Account Management</h2>
+            <p>Take full command of your tolling expenses with our intuitive account management portal. Access detailed transaction histories, manage various payment methods securely, update vehicle information with ease, and customize notification preferences to stay informed. Our platform provides a clear and consolidated view of all your tolling activities.</p>
+            <p><strong>Benefits:</strong> Benefit from unparalleled transparency and control over your toll expenditures. Easy-to-navigate interfaces and comprehensive data empower you to manage your account effortlessly, ensuring you always have the information you need at your fingertips.</p>
+        </section>
+
+        <section id="vehicle-management" class="content-section">
+            <h2>Efficient Vehicle Management</h2>
+            <p>Managing multiple vehicles is simpler than ever. Link all your family or personal vehicles to a single account, customize settings for each vehicle (such as specific payment methods or tolling preferences), and effortlessly track toll expenses on a per-vehicle basis. This centralized approach streamlines what was once a complex task.</p>
+            <p><strong>Benefits:</strong> Perfect for households with multiple cars or individuals who use different vehicles. Our system simplifies the tracking and management of toll expenses, providing clarity and reducing administrative burden.</p>
+        </section>
+
+        <section id="fleet-management" class="content-section">
+            <h2>Advanced Fleet Management</h2>
+            <p>For businesses operating vehicle fleets, Crypto Tolls offers a robust suite of tools designed to optimize efficiency and control costs. Utilize centralized billing for all fleet vehicles, perform bulk vehicle registrations quickly, generate detailed reports and analytics for actionable insights, and (where applicable) assign vehicles to specific drivers or cost centers. Our platform is built to scale with your business needs.</p>
+            <p><strong>Benefits:</strong> Drastically reduce administrative overhead associated with toll management. Gain powerful data-driven insights to optimize routes and reduce expenses. Improve overall fleet efficiency and achieve significant cost savings through streamlined operations and transparent reporting.</p>
+        </section>
+        
+        <section class="cta-section">
+            <div class="container">
+                <p>Ready to streamline your journey and revolutionize your toll management?</p>
+                <a href="#" class="btn btn-custom-accent btn-lg" data-toggle="modal" data-target="#createAccountModal">Create Your Account Today!</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder -->
+    <!-- <footer class="text-center py-4 mt-5" style="background-color: #0D213F; color: #E0E0E0;">
+        <p>&copy; 2023 Crypto Tolls. All Rights Reserved.</p>
+    </footer> -->
+
+<!-- Create Account Modal (Copied from previous step, ensure IDs are fine) -->
+<div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="createAccountModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"> {/* Styling from dark-theme.css */}
+            <div class="modal-header">
+                <h5 class="modal-title" id="createAccountModalLabel">Create Account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom-accent">Create Account</button>
+                </form>
+                <button type="button" class="btn btn-secondary custom-dark-theme mt-3" onclick="window.location.href='vehicle.html'">Go to Vehicle Linker</button> {/* Added custom-dark-theme class */ }
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Link Vehicle Modal (Copied from previous step, ensure IDs are fine) -->
+<div class="modal fade" id="linkVehicleModal" tabindex="-1" role="dialog" aria-labelledby="linkVehicleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"> {/* Styling from dark-theme.css */}
+            <div class="modal-header">
+                <h5 class="modal-title" id="linkVehicleModalLabel">Link Vehicle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="vehicleFormModal"> {/* Ensure this ID is unique if multiple forms exist across modals that could be open, though unlikely here. */}
+                    <div class="vehicle-section">
+                        <h6>Vehicle 1</h6>
+                        <div class="form-group">
+                            <label for="plateNumberModal1">Plate#:</label>
+                            <input type="text" class="form-control" id="plateNumberModal1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stateRegisteredModal1">State Registered In:</label>
+                            <input type="text" class="form-control" id="stateRegisteredModal1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="makeModal1">Make (optional):</label>
+                            <input type="text" class="form-control" id="makeModal1">
+                        </div>
+                        <div class="form-group">
+                            <label for="modelModal1">Model (optional):</label>
+                            <input type="text" class="form-control" id="modelModal1">
+                        </div>
+                        <div class="form-group">
+                            <label for="yearModal1">Year (optional):</label>
+                            <input type="text" class="form-control" id="yearModal1">
+                        </div>
+                    </div>
+                    <button id="addVehicleBtnModal" class="btn btn-secondary custom-dark-theme">Add Another Vehicle</button> {/* Added custom-dark-theme class */}
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="vehicleFormModal" class="btn btn-custom-accent">Link Vehicles</button>
+            </div>
+        </div>
+    </div>
+</div>  
+
+</body>
+</html>

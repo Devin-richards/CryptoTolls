@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Link Your Vehicle</title>
+    <title>Link Your Vehicle - Crypto Tolls</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <title>Link Your Vehicle</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts (Roboto) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Custom Dark Theme CSS -->
+    <link rel="stylesheet" href="dark-theme.css"> 
     <style>
+        /* vehicle.html specific styles can be minimal now */
         body {
-            font-family: 'Roboto', sans-serif;
+            /* font-family is in dark-theme.css */
+            /* background-color is in dark-theme.css */
+            /* color is in dark-theme.css */
+            /* padding-top will be set on body inline for fixed navbar */
         }
         .input-field {
             margin-top: 0.5rem;
@@ -135,26 +137,41 @@
         }
     </style>
 </head>
-<body style="background-color: #b0b0b0">
+<body style="padding-top: 70px;"> {/* Body styling primarily from dark-theme.css */}
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0A192F;"> {/* Ensure navbar is fixed and styled */}
             <a class="navbar-brand" href="index.html">Crypto Tolls</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="how-it-works.html">How It Works</a>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="technology.html">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tokenization.html">Tokenization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="future.html">The Future</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="vehicle.html">Link Vehicle</a>
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#linkVehicleModal">Link Vehicle</a>
                     </li>
                 </ul>
                 <button id="connectXumm" class="btn btn-outline-light mr-3">
@@ -164,46 +181,49 @@
         </nav>
     </header>
     <!-- Instructional Text -->
-    <div class="container mx-auto text-center p-4">
-        <h2 class="page-title">Select Your Vehicle</h2>
-        <p class="page-subtitle">Click on a vehicle to link it with your crypto toll account.</p>
+    <div class="container page-header-custom"> {/* Applied class from dark-theme.css */}
+        <h2 class="page-title">Select Your Vehicle Type</h2> {/* Text updated, styling from dark-theme.css */}
+        <p class="page-subtitle">Click on a vehicle to link it with your Crypto Tolls account.</p> {/* Styling from dark-theme.css */}
     </div>
 
     <!-- Vehicle Selection Grid -->
-    <div class="container mx-auto p-4 grid grid-cols-4 gap-4">
-        <!-- Vehicle Buttons -->
-        <div class="vehicle-button" onclick="openModal('linkVehicleModal')">
-            <img src="/Users/devinrichards/Desktop/Tolls Project/images/veh.png" alt="Car" class="vehicle-image">
-            <span class="vehicle-label">Car</span>
-        </div>
-        <div class="vehicle-button" onclick="openModal('linkVehicleModal')">
-            <img src="/Users/devinrichards/Desktop/Tolls Project/images/truck.png" alt="Truck" class="vehicle-image">
-            <span class="vehicle-label">Truck</span>
-        </div>
-        <div class="vehicle-button" onclick="openModal('linkVehicleModal')">
-            <img src="/Users/devinrichards/Desktop/Tolls Project/images/trucktruck.png" alt="Pickup" class="vehicle-image">
-            <span class="vehicle-label">Pickup</span>
-        </div>
-        <div class="vehicle-button" onclick="openCarpoolerModal()">
-            <img src="/Users/devinrichards/Desktop/Tolls Project/images/pooler.png" alt="Carpooler" class="vehicle-image">
-            <span class="vehicle-label">Carpooler</span>
+    <!-- TODO: Ensure actual images (veh.png, truck.png, trucktruck.png, pooler.png) are present in the root directory or update paths if images are placed in an 'images' subdirectory. -->
+    <div class="container">
+        <div class="vehicle-selection-grid"> {/* Styling from dark-theme.css */}
+            {/* Updated to use data-attributes for Bootstrap modal and removed old onclick */}
+            <div class="vehicle-button" data-toggle="modal" data-target="#linkVehicleModal" data-vehicle-type="Car">
+                <img src="veh.png" alt="Car" class="vehicle-image"> {/* Corrected path to root */}
+                <span class="vehicle-label">Car</span>
+            </div>
+            <div class="vehicle-button" data-toggle="modal" data-target="#linkVehicleModal" data-vehicle-type="Truck">
+                <img src="truck.png" alt="Truck" class="vehicle-image"> {/* Corrected path to root */}
+                <span class="vehicle-label">Truck</span>
+            </div>
+            <div class="vehicle-button" data-toggle="modal" data-target="#linkVehicleModal" data-vehicle-type="Pickup">
+                <img src="trucktruck.png" alt="Pickup" class="vehicle-image"> {/* Corrected path to root */}
+                <span class="vehicle-label">Pickup</span>
+            </div>
+            <div class="vehicle-button" data-toggle="modal" data-target="#linkVehicleModal" data-vehicle-type="Carpooler"> {/* Assuming Carpooler uses the same modal for now */}
+                <img src="pooler.png" alt="Carpooler" class="vehicle-image"> {/* Corrected path to root */}
+                <span class="vehicle-label">Carpooler</span>
         </div>
     </div>
 
     <div class="modal fade" id="linkVehicleModal" tabindex="-1" role="dialog" aria-labelledby="linkVehicleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document"> <!-- Adjust size with modal-lg -->
-            <div class="modal-content rounded-lg shadow-lg">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content"> {/* Styling from dark-theme.css */}
                 <div class="modal-header">
-                    <h5 class="modal-title" id="linkVehicleModalLabel">Link Vehicle</h5>
-                    <button class="btn btn-primary" data-toggle="modal" data-target="#linkVehicleModal">Link Vehicle</button>
-                    <span aria-hidden="true">&times;</span>
+                    <h5 class="modal-title" id="linkVehicleModalLabel">Link Vehicle</h5> {/* JS will update this title */}
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Vehicle Link Form -->
                     <form id="vehicleForm">
-                        <div class="vehicle-section">
-                            <h6>Vehicle 1</h6>
+                        <input type="hidden" id="vehicleTypeInput" name="vehicleType">
+                        <div id="vehicleEntriesContainer"> {/* Wrapper for dynamic vehicle entries */}
+                            <div class="vehicle-section mb-3"> 
+                                <h6>Vehicle 1</h6> {/* This h6 will inherit modal text color */}
                             <div class="form-group">
                                 <label for="plateNumber1">Plate#:</label>
                                 <input type="text" class="form-control" id="plateNumber1" required>
@@ -214,132 +234,268 @@
                             </div>
                             <!-- Additional fields for Make, Model, Year (optional) -->
                         </div>
-                        <!-- Button to add another vehicle -->
-                        <button id="addVehicleBtn" class="btn btn-secondary mt-2">Add Another Vehicle</button>
+                        </div>
+                        <button type="button" id="addVehicleBtn" class="btn btn-secondary custom-dark-theme mt-2 mb-3">Add Another Vehicle</button>
     
-                        <!-- Crypto Account Section -->
-                        <div class="mt-4">
-                            <label class="inline-flex items-center">
-                                <input type="checkbox" id="hasCryptoAccount" class="form-checkbox h-5 w-5 text-blue-600" onchange="toggleCryptoAccount()">
-                                <span class="ml-2">I have a crypto toll account</span>
-                            </label>
-                            <div id="cryptoAccountSection" class="mt-2 hidden">
-                                <input type="text" id="cryptoAccount" placeholder="Crypto Account Address" class="form-control">
-                                <button id="copyXrplAddress" class="btn btn-outline-primary mt-2 hidden" onclick="copyXrplAddress()">Copy XRPL Address</button>
+                        <div class="form-group">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="hasCryptoAccount" onchange="toggleCryptoAccount()">
+                                <label class="form-check-label" for="hasCryptoAccount">
+                                    I have a crypto toll account
+                                </label>
                             </div>
                         </div>
-    
-                        <!-- Carpool Section -->
-                        <div id="carpoolSection" class="mt-4">
-                            <h3 class="font-bold text-lg">Carpool Participants</h3>
-                            <div id="carpoolParticipants">
-                                <!-- Carpool participant fields will be added here dynamically -->
+                        <div id="cryptoAccountSection" style="display: none;" class="mb-3">
+                             <div class="form-group">
+                                <label for="cryptoAccount">Crypto Account Address:</label>
+                                <input type="text" id="cryptoAccount" placeholder="Enter XRPL Account Address" class="form-control">
+                             </div>
+                            <button type="button" id="copyXrplAddress" class="btn btn-outline-light btn-sm">Use Example Address</button>
                             </div>
-                            <button id="addCarpoolParticipant" class="btn btn-info mt-2">Add Participant</button>
+                        
+    
+                        <div id="carpoolSection" class="mt-4" style="display: none;">
+                            <h5>Carpool Participants</h5> {/* Styling from dark-theme.css for h5 */ }
+                            <div id="carpoolParticipants">
+                                <!-- Carpool participant fields will be added here by JS -->
+                            </div>
+                            <button type="button" id="addCarpoolParticipant" class="btn btn-info mt-2">Add Participant</button> {/* btn-info is a Bootstrap class, dark-theme.css may enhance it or provide alternatives */}
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" form="vehicleForm" class="btn btn-primary">Link Vehicles</button>
-                    <button onclick="window.location.href='vehicle.html'" class="btn btn-secondary">Go to Vehicle Linker</button>
+                    <button type="button" class="btn btn-secondary custom-dark-theme" data-dismiss="modal">Close</button>
+                    <button type="submit" form="vehicleForm" class="btn btn-custom-accent">Link Vehicles</button>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Page Specific Script -->
-    <script>
-        // JavaScript code for modal interactions
-
-        function toggleCryptoAccount() {
-    var cryptoSection = document.getElementById('cryptoAccountSection');
-    var copyButton = document.getElementById('copyXrplAddress');
-    var hasCryptoAccount = document.getElementById('hasCryptoAccount').checked;
-
-    cryptoSection.style.display = hasCryptoAccount ? 'block' : 'none';
-    copyButton.style.display = hasCryptoAccount ? 'inline-block' : 'none';
-}
-function openModal(vehicleType) {
-    document.getElementById('vehicleTitle').innerText = 'Link ' + vehicleType;
-    document.getElementById('linkVehicleModal').style.display = "block";
-}
-
-document.getElementById('addCarpoolParticipant').addEventListener('click', addCarpoolParticipant);
-
-let participantCount = 0;
-
-function addCarpoolParticipant() {
-    participantCount++;
-    const container = document.createElement('div');
-    container.className = 'participant-container mt-2';
-    container.innerHTML = `
-        <input type="text" placeholder="Participant Name ${participantCount}" class="input-field mb-2">
-        <input type="text" placeholder="License Plate ${participantCount}" class="input-field mb-2">
-        <button onclick="removeParticipant(this)" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded">Remove</button>
-    `;
-    document.getElementById('carpoolParticipants').appendChild(container);
-}
-
-function removeParticipant(button) {
-    button.parentElement.remove();
-}
-function openCarpoolerModal() {
-    document.getElementById('carpoolerModal').style.display = 'block';
-}
-
-function closeCarpoolerModal() {
-    document.getElementById('carpoolerModal').style.display = 'none';
-}
-
-function scanDriverAccount() {
-    // Placeholder for scanning functionality
-    // In a real implementation, this might open a QR code scanner or similar tool
-    console.log("Scanning driver's account...");
-    // Backend interaction to record scanning and manage rewards
-}
-
-const xrplPublicAddress = 'rEXAMPLE1234567890XRPLADDRESS';
-
-function copyXrplAddress() {
-    console.log("copyXrplAddress function called."); // Debug log
-
-    var cryptoAccountInput = document.getElementById('cryptoAccount');
-    cryptoAccountInput.value = xrplPublicAddress;
-    console.log("Address set in input field:", xrplPublicAddress); // Debug log
-
-    // Copy to clipboard
-    navigator.clipboard.writeText(xrplPublicAddress)
-        .then(() => {
-            console.log("XRPL Address copied to clipboard.");
-            alert('XRPL Address copied to clipboard!');
-        })
-        .catch(err => {
-            console.error('Error copying text: ', err);
-            alert('Failed to copy XRPL Address.');
-        });
-}
-
-function closeModal() {
-    var modal = document.getElementById('linkVehicleModal');
-    modal.style.display = "none";
-}
-
-        function linkVehicle() {
-            var licensePlate = document.getElementById('licensePlate').value;
-            var hasCryptoAccount = document.getElementById('hasCryptoAccount').checked;
-            var cryptoAccount = hasCryptoAccount ? document.getElementById('cryptoAccount').value : 'N/A';
-            
-            if (licensePlate && (hasCryptoAccount && cryptoAccount)) {
-                // Process linking vehicle with crypto account
-                console.log('Vehicle with license ' + licensePlate + ' linked to crypto account ' + cryptoAccount);
-                closeModal();
-            } else {
-                alert('Please fill in all required fields.');
-            }
-        }
-    </script>
+    <!-- Create Account Modal (Copied from other pages for consistency) -->
+    <div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="createAccountModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content"> {/* Styling from dark-theme.css */}
+                 <div class="modal-header">
+                    <h5 class="modal-title" id="createAccountModalLabel">Create Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="modalUsername">Username:</label>
+                            <input type="text" class="form-control" id="modalUsername" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalPassword">Password:</label>
+                            <input type="password" class="form-control" id="modalPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="modalEmail">Email:</label>
+                            <input type="email" class="form-control" id="modalEmail" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom-accent">Create Account</button>
+                    </form>
+                     <button type="button" class="btn btn-secondary custom-dark-theme mt-3" onclick="window.location.href='vehicle.html'">Go to Vehicle Linker</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    {/* vehicle.html specific JavaScript is now inline. Ensure no conflicting scripts.js is linked unless its content is verified and intended. */}
+    <script>
+    // Ensures the entire DOM is loaded before executing JavaScript to prevent errors.
+    document.addEventListener('DOMContentLoaded', function() {
+
+        // Handles Bootstrap modal events for the 'Link Vehicle' modal.
+        // Sets the modal title based on the vehicle type and shows/hides carpool section.
+        if (typeof $ !== 'undefined') { // Check if jQuery is available
+            $('#linkVehicleModal').on('show.bs.modal', function (event) {
+                var button = $(event.relatedTarget); 
+                var vehicleType = button.data('vehicle-type'); 
+                var modal = $(this);
+                modal.find('.modal-title').text('Link ' + vehicleType); // Update modal title
+                
+                const vehicleTypeInput = modal.find('#vehicleTypeInput');
+                if (vehicleTypeInput.length) {
+                    vehicleTypeInput.val(vehicleType); // Set hidden input for form submission
+                }
+
+                const carpoolSection = modal.find('#carpoolSection');
+                if (carpoolSection.length) {
+                    if (vehicleType === 'Carpooler') {
+                        carpoolSection.show();
+                        // Automatically add one participant field if none exist for Carpooler type.
+                        const carpoolParticipantsDiv = document.getElementById('carpoolParticipants');
+                        if (carpoolParticipantsDiv && carpoolParticipantsDiv.childElementCount === 0) {
+                            addCarpoolParticipantField();
+                        }
+                    } else {
+                        carpoolSection.hide();
+                    }
+                }
+            });
+
+            // Resets the 'Link Vehicle' modal form fields when it's hidden.
+            $('#linkVehicleModal').on('hidden.bs.modal', function () {
+                vehicleCount = 1; // Reset counter for dynamically added vehicles
+                const container = document.getElementById('vehicleEntriesContainer');
+                if (container) {
+                    // Remove dynamically added vehicle sections, keeping only the first one.
+                    while (container.children.length > 1) {
+                        container.removeChild(container.lastChild);
+                    }
+                    // Clear input fields in the first (or only) vehicle section.
+                    const firstVehicleSection = container.querySelector('.vehicle-section');
+                    if (firstVehicleSection) {
+                        firstVehicleSection.querySelectorAll('input[type="text"], input[type="email"], input[type="password"]').forEach(input => input.value = '');
+                    }
+                }
+                
+                carpoolParticipantCount = 0; // Reset carpool participant counter.
+                const carpoolParticipantsDiv = document.getElementById('carpoolParticipants');
+                if (carpoolParticipantsDiv) {
+                    carpoolParticipantsDiv.innerHTML = ''; // Clear all carpool participant fields.
+                }
+                
+                const hasCryptoAccountElem = document.getElementById('hasCryptoAccount');
+                if (hasCryptoAccountElem) {
+                    hasCryptoAccountElem.checked = false; // Uncheck 'hasCryptoAccount' checkbox.
+                }
+                toggleCryptoAccount(); // Update visibility of crypto account section.
+                
+                const cryptoAccountInput = document.getElementById('cryptoAccount');
+                if (cryptoAccountInput) {
+                    cryptoAccountInput.value = ''; // Clear crypto account address input.
+                }
+            });
+        }
+
+        // Toggles visibility of the crypto account input section based on checkbox.
+        function toggleCryptoAccount() {
+            const cryptoSection = document.getElementById('cryptoAccountSection');
+            const hasCryptoAccountCheckbox = document.getElementById('hasCryptoAccount');
+            if (cryptoSection && hasCryptoAccountCheckbox) {
+                cryptoSection.style.display = hasCryptoAccountCheckbox.checked ? 'block' : 'none';
+            }
+        }
+        
+        const hasCryptoAccountCheckbox = document.getElementById('hasCryptoAccount');
+        if (hasCryptoAccountCheckbox) {
+            hasCryptoAccountCheckbox.addEventListener('change', toggleCryptoAccount);
+        }
+        
+        let vehicleCount = 1; // Counter for dynamically added vehicle sections.
+        // Adds a new set of vehicle input fields to the form.
+        const addVehicleBtn = document.getElementById('addVehicleBtn');
+        if (addVehicleBtn) {
+            addVehicleBtn.addEventListener('click', function() {
+                vehicleCount++;
+                const container = document.getElementById('vehicleEntriesContainer');
+                if (container) {
+                    const newVehicleEntry = document.createElement('div');
+                    newVehicleEntry.className = 'vehicle-section mb-3'; 
+                    newVehicleEntry.innerHTML = \`
+                        <hr style="border-top: 1px solid #0D213F; margin-top: 1rem; margin-bottom: 1rem;">
+                        <h6>Vehicle \${vehicleCount}</h6>
+                        <div class="form-group">
+                            <label for="plateNumber\${vehicleCount}">Plate#:</label>
+                            <input type="text" class="form-control" id="plateNumber\${vehicleCount}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stateRegistered\${vehicleCount}">State Registered In:</label>
+                            <input type="text" class="form-control" id="stateRegistered\${vehicleCount}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="make\${vehicleCount}">Make (optional):</label>
+                            <input type="text" class="form-control" id="make\${vehicleCount}">
+                        </div>
+                        <div class="form-group">
+                            <label for="model\${vehicleCount}">Model (optional):</label>
+                            <input type="text" class="form-control" id="model\${vehicleCount}">
+                        </div>
+                        <div class="form-group">
+                            <label for="year\${vehicleCount}">Year (optional):</label>
+                            <input type="text" class="form-control" id="year\${vehicleCount}">
+                        </div>\`;
+                    container.appendChild(newVehicleEntry);
+                }
+            });
+        }
+        
+        let carpoolParticipantCount = 0; // Counter for carpool participant fields.
+        // Adds a set of input fields for a carpool participant.
+        // This function is now defined inside DOMContentLoaded and called by its event listener.
+        function addCarpoolParticipantField() {
+            carpoolParticipantCount++;
+            const carpoolContainer = document.createElement('div');
+            carpoolContainer.className = 'participant-container mt-2 form-group'; 
+            carpoolContainer.innerHTML = \`
+                <label for="participantName\${carpoolParticipantCount}">Participant Name \${carpoolParticipantCount}:</label>
+                <input type="text" id="participantName\${carpoolParticipantCount}" placeholder="Name" class="input-field form-control mb-2">
+                <label for="participantPlate\${carpoolParticipantCount}">License Plate \${carpoolParticipantCount} (Optional):</label>
+                <input type="text" id="participantPlate\${carpoolParticipantCount}" placeholder="License Plate" class="input-field form-control mb-2">
+                <button type="button" onclick="removeParticipant(this)" class="btn btn-danger btn-sm mb-2">Remove Participant</button>
+            \`;
+            const carpoolParticipantsDiv = document.getElementById('carpoolParticipants');
+            if (carpoolParticipantsDiv) {
+                carpoolParticipantsDiv.appendChild(carpoolContainer);
+            }
+        }
+        
+        const addCarpoolParticipantBtn = document.getElementById('addCarpoolParticipant');
+        if (addCarpoolParticipantBtn) {
+            addCarpoolParticipantBtn.addEventListener('click', addCarpoolParticipantField);
+        }
+
+        // Copies a predefined XRPL address to the crypto account input field.
+        const xrplPublicAddress = 'rPT1Sjq2YGrB6eCcmvsWBHKHQbHonoBBYI'; 
+        const copyXrplAddressBtn = document.getElementById('copyXrplAddress');
+        if (copyXrplAddressBtn) {
+            copyXrplAddressBtn.addEventListener('click', function() {
+                const cryptoAccountInput = document.getElementById('cryptoAccount');
+                if (cryptoAccountInput) {
+                    cryptoAccountInput.value = xrplPublicAddress;
+                    // Attempt to copy to clipboard, with fallback for older browsers/contexts.
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(xrplPublicAddress).then(function() {
+                            alert('Example XRPL Address copied to clipboard!');
+                        }, function(err) {
+                            alert('Failed to copy address. Please copy manually.');
+                            console.error('Clipboard copy failed: ', err);
+                        });
+                    } else {
+                        try {
+                            const textArea = document.createElement("textarea");
+                            textArea.value = xrplPublicAddress;
+                            textArea.style.position = "fixed"; // Avoid scrolling.
+                            document.body.appendChild(textArea);
+                            textArea.focus();
+                            textArea.select();
+                            document.execCommand('copy');
+                            document.body.removeChild(textArea);
+                            alert('Example XRPL Address copied to clipboard (fallback method)!');
+                        } catch (e) {
+                            alert('Failed to copy address. Please copy manually.');
+                            console.error('Clipboard copy fallback failed: ', e);
+                        }
+                    }
+                }
+            });
+        }
+    }); // End of DOMContentLoaded
+
+    // This function is called by an inline onclick in dynamically generated HTML (carpool participant remove button),
+    // so it needs to be in the global scope to be accessible.
+    function removeParticipant(button) {
+        const participantContainer = button.closest('.participant-container');
+        if (participantContainer) {
+            participantContainer.remove();
+        }
+    }
+    </script>
 </body>
 </html>

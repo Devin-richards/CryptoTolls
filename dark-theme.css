@@ -1,0 +1,243 @@
+body {
+    background-color: #0A192F; 
+    color: #E0E0E0; 
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding-top: 56px; /* For fixed-top navbar */
+}
+
+.navbar.fixed-top { /* Ensure fixed-top navbar has the correct dark background */
+    background-color: #0A192F !important;
+}
+
+.navbar-brand, .nav-link {
+    color: #FFFFFF !important; 
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* Page Headers (used on services, technology, about, contact, etc.) */
+.page-header {
+    background-color: #0D213F; 
+    padding: 40px 0;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.page-header h1 {
+    font-size: 3.5em;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+/* Specific Page Title styling for vehicle.html */
+.page-header-custom { /* As used in vehicle.html */
+    text-align: center;
+    padding: 20px 15px 30px;
+}
+.page-header-custom .page-title {
+    font-size: 2.8em; 
+    color: #FFFFFF;
+    font-weight: 700; 
+    margin-bottom: 0.5rem;
+}
+.page-header-custom .page-subtitle {
+    font-size: 1.2em; 
+    color: #E0E0E0; 
+    margin-bottom: 1rem; 
+}
+
+/* Content Sections (common for services, tech, about, contact, etc.) */
+.content-section {
+    padding: 20px 0;
+}
+.content-section h2 {
+    font-size: 2.5em;
+    color: #FFFFFF; 
+    margin-bottom: 20px;
+    font-weight: bold;
+    border-bottom: 2px solid #00A8FF; 
+    padding-bottom: 10px;
+}
+.content-section p {
+    font-size: 1.1em;
+    color: #E0E0E0;
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+.content-section .lead {
+    font-size: 1.25em;
+    font-weight: 400;
+    color: #F0F0F0; 
+    margin-bottom: 25px;
+}
+
+/* CTA Sections */
+.cta-section {
+    padding: 40px 15px;
+    text-align: center;
+    background-color: #0D213F; 
+    margin-top: 30px;
+}
+.cta-section p {
+    font-size: 1.5em;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+/* Buttons */
+.btn-custom-accent { 
+    background-color: #00A8FF;
+    border-color: #00A8FF;
+    color: #FFFFFF;
+    font-weight: bold;
+    padding: .5rem 1rem;
+}
+.btn-custom-accent:hover {
+    background-color: #0086cc;
+    border-color: #0086cc;
+    color: #FFFFFF;
+}
+.btn-secondary.custom-dark-theme { /* Ensure visibility for secondary buttons */
+    background-color: #4A5568; 
+    border-color: #4A5568;
+    color: #FFFFFF;
+}
+.btn-secondary.custom-dark-theme:hover {
+    background-color: #2D3748; 
+    border-color: #2D3748;
+}
+
+/* Modal Styling */
+.modal-content {
+    background-color: #102A43 !important; 
+    color: #E0E0E0 !important;
+    border: 1px solid #00A8FF !important; 
+    border-radius: 8px !important;
+}
+.modal-header {
+    border-bottom: 1px solid #0A192F !important; 
+}
+.modal-header .close { 
+    color: #FFFFFF !important;
+    opacity: 0.85 !important;
+    text-shadow: none !important;
+}
+.modal-header .close:hover {
+    opacity: 1 !important;
+}
+.modal-title {
+    color: #FFFFFF !important;
+    font-weight: 500 !important;
+}
+.modal-body label { 
+    color: #C0C0C0 !important; 
+    font-weight: 500 !important;
+}
+.modal-body .form-control, .modal-body .input-field { /* Targeting form inputs inside modals */
+    background-color: #0A192F !important; 
+    color: #E0E0E0 !important;
+    border: 1px solid #00A8FF !important;
+    border-radius: 4px !important;
+}
+.modal-body .form-control::placeholder, .modal-body .input-field::placeholder {
+    color: #8899A6 !important;
+}
+.modal-body .form-control:focus, .modal-body .input-field:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 168, 255, 0.35) !important; 
+}
+.modal-footer {
+    border-top: 1px solid #0A192F !important;
+}
+
+/* Links */
+a.link-custom-accent, .content-section a, .contact-info-item a {
+    color: #00A8FF;
+    text-decoration: none;
+    font-weight: bold;
+}
+a.link-custom-accent:hover, .content-section a:hover, .contact-info-item a:hover {
+    color: #0086cc;
+    text-decoration: underline;
+}
+
+/* Vehicle Page Specifics (can be moved to vehicle.html's style block if preferred) */
+.vehicle-selection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    padding: 25px;
+    max-width: 1100px;
+    margin: 0 auto; 
+}
+.vehicle-button {
+    background-color: #0D213F; 
+    border: 1px solid #00A8FF; 
+    border-radius: 8px;
+    padding: 25px;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+.vehicle-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 168, 255, 0.2);
+}
+.vehicle-image {
+    max-width: 120px;
+    height: auto;
+    margin-bottom: 20px;
+}
+.vehicle-label {
+    display: block;
+    font-size: 1.4em;
+    color: #FFFFFF; 
+    font-weight: 500;
+}
+#carpoolParticipants .participant-container {
+    padding: 10px;
+    border: 1px dashed #0D213F;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+#carpoolParticipants button.btn-danger { /* Specificity for carpool remove button */
+    background-color: #dc3545;
+    border-color: #dc3545;
+}
+#carpoolParticipants button.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+#addCarpoolParticipant.btn-info { /* Specificity for add participant button */
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+}
+#addCarpoolParticipant.btn-info:hover {
+    background-color: #138496;
+    border-color: #117a8b;
+}
+
+/* Ensure .btn-secondary in modals is also styled if not using .custom-dark-theme class */
+.modal-footer .btn-secondary {
+    background-color: #4A5568; 
+    border-color: #4A5568;
+    color: #FFFFFF;
+}
+.modal-footer .btn-secondary:hover {
+    background-color: #2D3748; 
+    border-color: #2D3748;
+}
+
+/* General form check styling for dark theme */
+.form-check-input {
+    /* Basic styling, might need more for custom look */
+    background-color: #0A192F;
+    border: 1px solid #00A8FF;
+}
+.form-check-input:checked {
+    background-color: #00A8FF;
+    border-color: #00A8FF;
+}
+.form-check-label {
+    color: #E0E0E0;
+}

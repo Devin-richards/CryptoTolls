@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Crypto Tolls</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dark-theme.css"> {/* Added common dark theme stylesheet */}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Most styles are now in dark-theme.css */
+        /* Form control styling, .contact-info-item, etc., are in dark-theme.css */
+        /* Specific overrides or minor adjustments for contact.html can go here if necessary. */
+    </style>
+</head>
+<body>
+
+    <!-- Navigation bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0A192F;">
+            <a class="navbar-brand" href="index.html">Crypto Tolls</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="technology.html">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tokenization.html">Tokenization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="future.html">The Future</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Contact <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#linkVehicleModal">Link Vehicle</a>
+                    </li>
+                </ul>
+                <button id="connectXumm" class="btn btn-outline-light mr-3">
+                    <img src="XRPL Logo Kit 2/svg/XRP Ledger - Purple Lettering.svg" alt="XRP Ledger Logo" style="width: 100px; height: auto;">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Get in Touch</h1>
+        </div>
+    </div>
+
+    <main class="container mt-5">
+        <section class="content-section text-center">
+            <p>We're here to help and answer any questions you may have. Whether you're interested in our services, exploring partnership opportunities, or have feedback on our platform, we'd love to hear from you. Reach out to us through any of the methods below.</p>
+        </section>
+
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <section id="contact-form-section" class="content-section">
+                    <h2>Send Us a Message</h2>
+                    <form>
+                        <!-- TODO: Backend integration required for form submission. -->
+                        <div class="form-group">
+                            <label for="contactName">Name</label>
+                            <input type="text" class="form-control" id="contactName" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Email</label>
+                            <input type="email" class="form-control" id="contactEmail" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactSubject">Subject</label>
+                            <input type="text" class="form-control" id="contactSubject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message</label>
+                            <textarea class="form-control" id="contactMessage" rows="5" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom-accent btn-lg mt-3">Send Message</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+
+        <section id="other-contact-methods" class="content-section mt-5">
+            <h2 class="text-center">Other Ways to Reach Us</h2>
+            <div class="row mt-4">
+                <div class="col-md-6 text-center contact-info-item">
+                    <h3>Email</h3>
+                    <p>For general inquiries, partnership proposals, or support questions, please email us at:<br> 
+                    <a href="mailto:info@cryptotolls.example.com">info@cryptotolls.example.com</a></p>
+                </div>
+                <div class="col-md-6 text-center contact-info-item">
+                    <h3>Social Media</h3>
+                    <p>Follow our journey and get the latest updates (channels coming soon):<br>
+                    <a href="#">@CryptoTolls on X (formerly Twitter)</a><br>
+                    <a href="#">Crypto Tolls on LinkedIn</a></p>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center contact-info-item">
+                     <h3>Office Location (By Appointment Only)</h3>
+                     <p>123 Innovation Drive, Tech City, Future State, 90210</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer placeholder -->
+    <!-- <footer class="text-center py-4 mt-5" style="background-color: #0D213F; color: #E0E0E0;">
+        <p>&copy; 2023 Crypto Tolls. All Rights Reserved.</p>
+    </footer> -->
+
+<!-- Create Account Modal -->
+<div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="createAccountModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"> {/* Styling from dark-theme.css */}
+            <div class="modal-header">
+                <h5 class="modal-title" id="createAccountModalLabel">Create Account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <button type="submit" class="btn btn-custom-accent">Create Account</button>
+                </form>
+                <button type="button" class="btn btn-secondary custom-dark-theme mt-3" onclick="window.location.href='vehicle.html'">Go to Vehicle Linker</button> {/* Added custom-dark-theme class */}
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Link Vehicle Modal -->
+<div class="modal fade" id="linkVehicleModal" tabindex="-1" role="dialog" aria-labelledby="linkVehicleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"> {/* Styling from dark-theme.css */}
+            <div class="modal-header">
+                <h5 class="modal-title" id="linkVehicleModalLabel">Link Vehicle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="vehicleFormModal">
+                    <div class="vehicle-section">
+                        <h6>Vehicle 1</h6>
+                        <div class="form-group">
+                            <label for="plateNumberModal1">Plate#:</label>
+                            <input type="text" class="form-control" id="plateNumberModal1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="stateRegisteredModal1">State Registered In:</label>
+                            <input type="text" class="form-control" id="stateRegisteredModal1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="makeModal1">Make (optional):</label>
+                            <input type="text" class="form-control" id="makeModal1">
+                        </div>
+                        <div class="form-group">
+                            <label for="modelModal1">Model (optional):</label>
+                            <input type="text" class="form-control" id="modelModal1">
+                        </div>
+                        <div class="form-group">
+                            <label for="yearModal1">Year (optional):</label>
+                            <input type="text" class="form-control" id="yearModal1">
+                        </div>
+                    </div>
+                    <button id="addVehicleBtnModal" class="btn btn-secondary custom-dark-theme">Add Another Vehicle</button> {/* Added custom-dark-theme class */}
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="submit" form="vehicleFormModal" class="btn btn-custom-accent">Link Vehicles</button>
+            </div>
+        </div>
+    </div>
+</div>  
+
+</body>
+</html>

@@ -3,54 +3,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Tolls</title>
+    <title>Crypto Tolls - Home</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dark-theme.css"> {/* Added common dark theme stylesheet */}
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <style>
-.center-content {
+        /* Styles specific to index.html, or overrides if necessary */
+        /* Body styling is now primarily handled by dark-theme.css */
+        /* Ensure navbar on index.html matches fixed-top behavior if other pages use it.
+           If index.html navbar is not fixed-top, then body padding-top might not be needed here.
+           For now, assuming index.html might have a slightly different navbar behavior than content pages,
+           so body padding-top is not forced here unlike dark-theme.css default.
+           If it should be fixed, then dark-theme.css will handle padding-top if body tag gets the right class or if navbar has fixed-top.
+        */
+        body {
+             padding-top: 56px; /* Assuming fixed navbar, consistent with other pages */
+        }
+
+        .center-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Adjust this if you have other content */
-    text-align: center; /* Ensures that text inside is centered */
-    padding: 5% 0 40%; /* Add padding to the top and bottom to accommodate the navbar and footer */
+    min-height: 80vh; /* Adjusted for potentially less bottom padding */
+    text-align: center;
+    padding: 5% 5% 10%; /* Adjusted padding */
 }
+
 .crypto-title {
-    font-size: 6em;      /* This makes the font size 3 times larger than the default */
-    font-weight: bold;   /* This makes the font bold */
-    font-family: 'Arial Black', 'Arial Bold', Gadget, sans-serif;  /* This changes the font to a bold typeface. Adjust as necessary */
-    color: azure;
+    font-size: 4.5em; /* Slightly reduced for new text */
+    font-weight: bold;
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, Helvetica, sans-serif; /* from dark-theme.css */
+    color: #FFFFFF; /* from dark-theme.css */
+    margin-bottom: 0.5em;
 }
 
 .crypto-tagline {
-    font-size: 2em;    /* This makes the font size 1.5 times larger than the default */
-    font-weight: semi-bold; /* Slight boldness for the tagline */
-    color: azure;
+    font-size: 1.8em; 
+    font-weight: 400; 
+    color: #E0E0E0; /* from dark-theme.css */
+    margin-bottom: 1.5em;
+    max-width: 800px; 
 }
-.svg-logo-container {
-    position: absolute;
+
+/* .btn-custom-accent is defined in dark-theme.css */
+/* .section-padding and its heading/paragraph styles are defined in dark-theme.css */
+
+.service-teaser a { /* This can be kept if specific styling different from default links is needed */
+    color: #00A8FF; /* from dark-theme.css via .link-custom-accent or general a styling */
+    text-decoration: none;
+    font-weight: bold;
+}
+.service-teaser a:hover { /* from dark-theme.css */
+    text-decoration: underline;
+}
+
+.service-item { /* Specific to index.html structure */
+    margin-bottom: 30px;
+}
+
+/* TODO: (Comment already present) Replace with a background image or video... */
+
+.svg-logo-container { 
+    position: absolute; /* This style is specific to index.html */
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%);  /* This will center the logo horizontally */
-    z-index: 9999;  /* Ensuring the logo appears above other content */
+    transform: translateX(-50%);
+    z-index: 9999;
 }
 
 .svg-logo-container img {
-    width: 200px;    /* Adjust this value as needed to increase or decrease the logo size */
-    height: auto;    /* This will maintain the aspect ratio of the SVG */
-    display: block;  /* This ensures the image takes up full width specified */
+    width: 200px;
+    height: auto;
+    display: block;
 }
     </style>
 </head>
-<body style="margin: 0; height: 100vh; background-image: url(53d42bf3-8e44-4985-9896-e9148171fe80.webp); background-size: 100%; padding-top: 5px; background-position: center; background-repeat: no-repeat;">
+<!-- TODO: Replace with a background image or video that evokes a sense of large-scale infrastructure, technology, and finance. Consider abstract geometric patterns, futuristic cityscapes with data overlays, or imagery of modern transportation networks. -->
+<body style="background-color: #0A192F; color: #E0E0E0; font-family: 'Roboto', 'Open Sans', 'Lato', Arial, Helvetica, sans-serif; margin: 0; padding-top: 5px;">
 
     <!-- Navigation bar -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <a class="navbar-brand" href="#">Crypto Tolls</a>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0A192F;"> {/* Added fixed-top and background style like other pages */}
+            <a class="navbar-brand" href="index.html">Crypto Tolls</a> {/* Corrected href to index.html */}
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -60,7 +97,22 @@
                         <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="how-it-works.html">How It Works</a>
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="technology.html">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tokenization.html">Tokenization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="future.html">The Future</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
@@ -76,16 +128,58 @@
         </nav>
     </header>
 
-    <!-- Overlay content on top of the full screen picture -->
+    <!-- Hero Section -->
     <section id="overlay-content" class="center-content">
-        <h1 class="crypto-title">CRYPTO TOLLS</h1>
-        <p class="crypto-tagline">Pay your tolls easier, quicker and cheaper and earn crypto rewards</p>
-        <a href="how-it-works.html" class="btn btn-primary">Learn More</a>
+        <h1 class="crypto-title">Reimagining Infrastructure. Revolutionizing Mobility.</h1>
+        <p class="crypto-tagline">Leveraging cutting-edge technology and tokenization to build the next generation of transportation infrastructure, starting with seamless tolling.</p>
+        <a href="future.html" class="btn btn-custom-accent">Discover Our Vision</a>
     </section>
+
+    <!-- New Section: The $68T Tokenization Opportunity -->
+    <section class="section-padding">
+        <div class="container">
+            <h2>The $68 Trillion Revolution: Tokenizing Global Infrastructure</h2>
+            <p>Inspired by visionary perspectives on the future of finance, we believe in the transformative power of tokenization. This isn't just about technology; it's about unlocking unprecedented investment and efficiency in critical infrastructure, a market opportunity valued in the trillions. We are at the forefront of making this a reality.</p>
+        </div>
+    </section>
+
+    <!-- New Section: The "Rebuilding the Highway" Vision -->
+    <section class="section-padding" style="background-color: #0D213F;"> <!-- Slightly different background for variation -->
+        <div class="container">
+            <h3>Our Moonshot: The 16-Week Transcontinental Highway</h3>
+            <p>Imagine a world where vital infrastructure, like the transcontinental highway system, is not just maintained but dynamically rebuilt and upgraded at an unprecedented pace. Through tokenized investment and next-generation project management, we envision a future where such monumental feats are achievable every 16 weeks. This is the scale of ambition that drives Crypto Tolls.</p>
+            <!-- TODO: Add a compelling graphic or animation here representing rapid infrastructure development -->
+        </div>
+    </section>
+
+    <!-- New Section: Core Services Teaser -->
+    <section class="section-padding service-teaser">
+        <div class="container">
+            <h4>Our Core Services</h4>
+            <div class="row">
+                <div class="col-md-4 service-item">
+                    <h5>Seamless Toll Payments</h5>
+                    <p>Experience automated, cost-effective toll payments across a growing network. Drive smarter, not harder.</p>
+                    <a href="services.html#toll-payments">Learn more &raquo;</a>
+                </div>
+                <div class="col-md-4 service-item">
+                    <h5>Fleet Management</h5>
+                    <p>Optimize your fleet's toll management with centralized billing, real-time data, and powerful analytics.</p>
+                    <a href="services.html#fleet-management">Learn more &raquo;</a>
+                </div>
+                <div class="col-md-4 service-item">
+                    <h5>XRPL Integration</h5>
+                    <p>Leveraging the speed and efficiency of the XRP Ledger for transparent and low-cost toll transactions and tokenization.</p>
+                    <a href="technology.html#xrpl-integration">Learn more &raquo;</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <!-- Create Account Modal -->
 <div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="createAccountModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content"> <!-- Styling from dark-theme.css -->
             <div class="modal-header">
                 <h5 class="modal-title" id="createAccountModalLabel">Create Account</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -106,7 +200,7 @@
                         <label for="email">Email:</label>
                         <input type="email" class="form-control" id="email" required>
                     </div>
-                    <button type="submit" class="btn btn-primary">Create Account</button>
+                    <button type="submit" class="btn btn-custom-accent">Create Account</button> {/* Changed class */ }
                 </form>
                 <!-- Button to go to vehicle.html -->
                 <button type="button" class="btn btn-secondary mt-3" onclick="window.location.href='vehicle.html'">Go to Vehicle Linker</button>
@@ -117,7 +211,7 @@
 <!-- Link Vehicle Modal -->
 <div class="modal fade" id="linkVehicleModal" tabindex="-1" role="dialog" aria-labelledby="linkVehicleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
-        <div class="modal-content">
+        <div class="modal-content"> {/* Styling from dark-theme.css */}
             <div class="modal-header">
                 <h5 class="modal-title" id="linkVehicleModalLabel">Link Vehicle</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -125,7 +219,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form id="vehicleForm">
+                <form id="vehicleForm"> {/* Note: This ID might conflict if vehicle.html's modal JS is ever loaded globally */}
                     <div class="vehicle-section">
                         <h6>Vehicle 1</h6>
                         <div class="form-group">
@@ -149,12 +243,12 @@
                             <input type="text" class="form-control" id="year1">
                         </div>
                     </div>
-                    <!-- Dynamically added vehicle sections will appear here -->
+                    {/* Placeholder for JS to add more vehicles if that functionality is intended here too */}
+                    {/* <button type="button" id="addVehicleBtnIndex" class="btn btn-secondary custom-dark-theme">Add Another Vehicle</button> */}
                 </form>
-                <button id="addVehicleBtn" class="btn btn-secondary">Add Another Vehicle</button>
             </div>
             <div class="modal-footer">
-                <button type="submit" form="vehicleForm" class="btn btn-primary">Link Vehicles</button>
+                <button type="submit" form="vehicleForm" class="btn btn-custom-accent">Link Vehicles</button> {/* Changed class */}
             </div>
         </div>
     </div>

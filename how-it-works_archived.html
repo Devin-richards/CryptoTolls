@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works - Crypto Tolls (Archived)</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dark-theme.css"> {/* Added link to common dark theme styles */}
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Styles in this block can be reviewed and potentially reduced 
+           if they are fully covered by dark-theme.css */
+body {
+    background-color: #0A192F; 
+    color: #E0E0E0; 
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding-top: 56px; /* For fixed-top navbar */
+}
+
+.navbar-brand, .nav-link {
+    color: #FFFFFF !important; /* Ensure navbar text is white */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.page-header-custom { /* Renamed to avoid conflict if page-header is used elsewhere */
+    padding: 60px 15px; /* Using container padding for consistency */
+    text-align: left; /* Original alignment */
+}
+
+.page-header-custom h1 {
+    font-size: 3.0em; /* Adjusted size */
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.page-header-custom p {
+    font-size: 1.1em;
+    color: #E0E0E0;
+    max-width: 550px; /* Constrain width */
+}
+
+.feature-section {
+    padding: 30px 15px;
+}
+
+.feature-item {
+    margin-bottom: 30px;
+}
+
+.feature-item .icon-placeholder { /* Style for the placeholder boxes */
+    width: 40px;
+    height: 40px;
+    background-color: #00A8FF; /* Accent color */
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+.feature-item img.icon-placeholder { /* If actual image is used for icon */
+    width: 40px;
+    height: 40px;
+    margin-right: 16px;
+    flex-shrink: 0;
+}
+
+
+.feature-item h3 {
+    font-size: 1.5em;
+    color: #FFFFFF;
+    margin-bottom: 0.5em;
+}
+
+.feature-item p {
+    font-size: 1em;
+    color: #E0E0E0;
+}
+
+.content-block { /* General block for structured content */
+    padding: 30px 0; /* Vertical padding */
+}
+.content-block h2 {
+    font-size: 2.2em;
+    color: #FFFFFF;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.content-block h3 {
+     font-size: 1.8em;
+    color: #00A8FF; /* Accent for sub-vision titles */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.content-block p, .content-block li {
+    font-size: 1.1em;
+    color: #E0E0E0;
+    line-height: 1.7;
+}
+.content-block ul {
+    list-style: none;
+    padding-left: 0;
+}
+.content-block ul li::before {
+    content: "\\2022"; /* Bullet character */
+    color: #00A8FF; /* Accent color for bullets */
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+    margin-left: -1em;
+}
+
+.testimonial-card {
+    background-color: #0D213F; /* Slightly lighter background for cards */
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border-left: 3px solid #00A8FF;
+}
+.testimonial-card p {
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+.testimonial-card .author {
+    font-weight: bold;
+    color: #FFFFFF;
+}
+.testimonial-card .author-title {
+    font-size: 0.9em;
+    color: #B0B0B0; /* Lighter grey for title */
+}
+
+.faq-item {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #0D213F; /* Separator for FAQ */
+}
+.faq-item h5 {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.btn-custom-accent { 
+    background-color: #00A8FF;
+    border-color: #00A8FF;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+.btn-custom-accent:hover {
+    background-color: #0086cc;
+    border-color: #0086cc;
+    color: #FFFFFF;
+}
+
+/* Styles for the old absolutely positioned content - attempting to make them relative / flow better */
+.custom-section {
+    padding: 40px 0; /* General padding */
+    color: #E0E0E0; /* Default text color */
+}
+.custom-section h1, .custom-section h2, .custom-section h3, .custom-section h4, .custom-section h5, .custom-section div, .custom-section p {
+    font-family: 'Roboto', 'Open Sans', 'Lato', Arial, Helvetica, sans-serif !important; /* Override Helvetica Neue */
+    color: #E0E0E0; /* Default to light grey */
+}
+.custom-section .main-title {
+    font-size: 2.8em; /* Adjust as needed */
+    color: #FFFFFF; /* White for main titles */
+    font-weight: bold;
+}
+.custom-section .sub-title {
+    font-size: 1.2em;
+    color: #E0E0E0; /* Light grey for subtitles */
+}
+.custom-section .accent-text {
+    color: #00A8FF !important; /* Use accent color */
+}
+.custom-section .accent-bg {
+    background-color: #00A8FF !important; /* Use accent color for background */
+    color: #FFFFFF !important; /* Ensure text on accent bg is white */
+}
+.custom-section .icon-bg {
+    background-color: #00A8FF !important; /* Accent for icon backgrounds */
+}
+.custom-section .placeholder-img {
+    border: 1px solid #0D213F; /* Add a subtle border if images are too stark */
+}
+
+/* Footer styling (Placeholder if added) */
+/* footer { background-color: #0D213F; color: #E0E0E0; padding: 20px 0; text-align: center; margin-top: 30px; } */
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color: #0A192F;">
+            <a class="navbar-brand" href="index.html">Crypto Tolls</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item"> <!-- Assuming How It Works is now effectively covered by Services/Tech -->
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="technology.html">Technology</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tokenization.html">Tokenization</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="future.html">The Future</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#" data-toggle="modal" data-target="#linkVehicleModal">Link Vehicle</a>
+                    </li>
+                </ul>
+                <button id="connectXumm" class="btn btn-outline-light mr-3">
+                    <img src="XRPL Logo Kit 2/svg/XRP Ledger - Purple Lettering.svg" alt="XRP Ledger Logo" style="width: 100px; height: auto;">
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Attempting to restructure the existing content into a flowing layout -->
+    <div class="container custom-section">
+        <!-- Section 1: Navigate with Ease -->
+        <div class="row align-items-center py-5">
+            <div class="col-md-6">
+                <h1 class="main-title">Navigate with Ease, Pay with Crypto</h1>
+                <p class="sub-title mt-3">Embark on a seamless journey with Crypto Tolls, the pinnacle of modern toll payments.</p>
+                <div class="mt-4">
+                    <a href="#" class="btn btn-custom-accent btn-lg" data-toggle="modal" data-target="#createAccountModal">Create Account</a>
+                    <p class="mt-2 accent-text">Pay tolls with crypto, and get rewarded with toll rewards.</p>
+                </div>
+            </div>
+            <div class="col-md-6 text-center">
+                <img class="img-fluid placeholder-img" src="https://via.placeholder.com/555x380/1A2B4F/FFFFFF?Text=Crypto+Payments+Concept" alt="Crypto Payments Concept" />
+            </div>
+        </div>
+
+        <!-- Section 2: Features -->
+        <div class="row py-5">
+            <div class="col-12 text-center mb-4">
+                 <h2 class="main-title">Key Features</h2>
+            </div>
+            <div class="col-md-4 feature-item d-flex align-items-start">
+                <div class="icon-placeholder mr-3"></div>
+                <div>
+                    <h3>Intuitive Design</h3>
+                    <p>Our user interface is streamlined for efficiency, making toll payments faster than ever.</p>
+                </div>
+            </div>
+            <div class="col-md-4 feature-item d-flex align-items-start">
+                <div class="icon-placeholder mr-3"></div>
+                <div>
+                    <h3>Universal Compatibility</h3>
+                    <p>Crypto Tolls works seamlessly across a multitude of devices, ensuring you're always covered.</p>
+                </div>
+            </div>
+            <div class="col-md-4 feature-item d-flex align-items-start">
+                 <img src="https://via.placeholder.com/40x40/00A8FF/FFFFFF?Text=RT" alt="Real-time Icon" class="icon-placeholder mr-3"/>
+                <div>
+                    <h3>Real-Time Processing</h3>
+                    <p>With lightning-fast transaction speeds, say goodbye to waiting times at toll booths.</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section 3: Empower Your Drive -->
+        <div class="row align-items-center py-5" style="background-color: #0D213F; border-radius: 8px; padding: 20px;">
+            <div class="col-md-7">
+                <h2 class="main-title mb-3">Empower Your Drive with the Power of Cryptocurrency</h2>
+                <p>Dive into the vast sea of effortless travel with Crypto Tolls and discover a world where convenience meets security.</p>
+                <ul class="list-unstyled mt-3">
+                    <li class="mb-2 d-flex align-items-start"><span class="icon-placeholder mr-2" style="width:10px; height:10px; border-radius:50%; margin-top:7px;"></span>Drive Smarter, Not Harder - Get Started with Crypto Tolls Today!</li>
+                    <li class="mb-2 d-flex align-items-start"><span class="icon-placeholder mr-2" style="width:10px; height:10px; border-radius:50%; margin-top:7px;"></span>Seamless Integration: Sync Crypto Tolls with your social channels for effortless sharing.</li>
+                    <li class="mb-2 d-flex align-items-start"><span class="icon-placeholder mr-2" style="width:10px; height:10px; border-radius:50%; margin-top:7px;"></span>Global Access: Your tolls transactions are now as global as your travel destinations.</li>
+                    <li class="d-flex align-items-start"><span class="icon-placeholder mr-2" style="width:10px; height:10px; border-radius:50%; margin-top:7px;"></span>Innovative Embedding: Integrate your tolls activity within your personal or business website with ease.</li>
+                </ul>
+            </div>
+            <div class="col-md-5 text-center">
+                 <img class="img-fluid placeholder-img" src="https://via.placeholder.com/555x380/1A2B4F/FFFFFF?Text=Empowerment+Concept" alt="Empowerment Concept" />
+            </div>
+        </div>
+
+        <!-- Section 4: Testimonials -->
+        <div class="row py-5">
+            <div class="col-12 text-center mb-4">
+                <h2 class="main-title">What Our Users Say</h2>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <p>"Crypto Tolls has completely transformed my daily commute. The intuitive dashboard and easy-to-navigate interface save me time every day. It's the perfect marriage of tech and practicality on the road."</p>
+                    <p class="author">John Parker</p>
+                    <p class="author-title">Daily Commuter & Crypto Enthusiast</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                    <p>"Paying tolls is now as simple as sending a text. With Crypto Tolls, my travel expenses are managed in real-time, securely and efficiently. This is the future of transportation!"</p>
+                    <p class="author">Emily Johnson</p>
+                    <p class="author-title">Tech-Savvy Professional</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="testimonial-card">
+                     <p>"As a fleet manager, Crypto Tolls has been a game-changer. The batch processing feature and detailed reports have streamlined how we manage toll fees across the company's vehicles."</p>
+                    <p class="author">Michael Chen</p>
+                    <p class="author-title">Fleet Manager & Logistics Coordinator</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 5: FAQ / Your Journey Simplified -->
+        <div class="row justify-content-center py-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="main-title mb-3">Your Journey, Simplified</h2>
+                <p class="sub-title mb-4">Common questions about Crypto Tolls.</p>
+                <div id="faqAccordion">
+                    <div class="faq-item">
+                        <h5>How does Crypto Tolls ensure security? <span class="float-right accent-text">+</span></h5>
+                        <!-- <p class="text-left mt-2" style="display:none;">Details about security...</p> -->
+                    </div>
+                    <div class="faq-item">
+                        <h5>Can I use multiple cryptocurrencies? <span class="float-right accent-text">+</span></h5>
+                    </div>
+                     <div class="faq-item">
+                        <h5>What if I have insufficient balance? <span class="float-right accent-text">+</span></h5>
+                    </div>
+                </div>
+                 <a href="contact.html" class="btn btn-outline-light btn-lg mt-4">Still Have Questions? Contact Us</a>
+            </div>
+        </div>
+        
+        <!-- Section 6: Final CTA -->
+         <div class="row justify-content-center py-5 text-center" style="background-color: #0D213F; border-radius: 8px; margin-top:30px; padding:30px;">
+            <div class="col-md-8">
+                <h2 class="main-title">Join the Crypto Tolls Family Today</h2>
+                <p class="sub-title mt-3">Experience the future of toll payments and become part of a growing community revolutionizing travel.</p>
+                <a href="#" class="btn btn-custom-accent btn-lg mt-3" data-toggle="modal" data-target="#createAccountModal">Create Your Crypto Tolls Account!</a>
+            </div>
+        </div>
+    </div> <!-- End container -->
+    
+<!-- Modals: Create Account & Link Vehicle -->
+<div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="createAccountModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="background-color: #102A43; color: #E0E0E0;">
+            <div class="modal-header" style="border-bottom: 1px solid #0A192F;">
+                <h5 class="modal-title" id="createAccountModalLabel" style="color: #FFFFFF;">Create Account</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #FFFFFF;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" class="form-control" id="username" required style="background-color: #0A192F; color: #E0E0E0; border: 1px solid #00A8FF;">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" required style="background-color: #0A192F; color: #E0E0E0; border: 1px solid #00A8FF;">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" required style="background-color: #0A192F; color: #E0E0E0; border: 1px solid #00A8FF;">
+                    </div>
+                    <button type="submit" class="btn btn-custom-accent">Create Account</button>
+                </form>
+                <button type="button" class="btn btn-secondary mt-3" onclick="window.location.href='vehicle.html'">Go to Vehicle Linker</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="linkVehicleModal" tabindex="-1" role="dialog" aria-labelledby="linkVehicleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" style="background-color: #102A43; color: #E0E0E0;">
+            <div class="modal-header" style="border-bottom: 1px solid #0A192F;">
+                <h5 class="modal-title" id="linkVehicleModalLabel" style="color: #FFFFFF;">Link Vehicle</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: #FFFFFF;">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="vehicleFormModal">
+                    <div class="vehicle-section">
+                        <h6>Vehicle 1</h6>
+                        <div class="form-group">
+                            <label for="plateNumberModal1">Plate#:</label>
+                            <input type="text" class="form-control" id="plateNumberModal1" required style="background-color: #0A192F; color: #E0E0E0; border: 1px solid #00A8FF;">
+                        </div>
+                        <div class="form-group">
+                            <label for="stateRegisteredModal1">State Registered In:</label>
+                            <input type="text" class="form-control" id="stateRegisteredModal1" required style="background-color: #0A192F; color: #E0E0E0; border: 1px solid #00A8FF;">
+                        </div>
+                        <div class="form-group">
+                            <label for="makeModal1">Make (optional):</label>
+                            <input type="text" class="form-control" id="makeModal1" style="background-color: #0A192F; color: #E0E0E0; border: 1px solid #00A8FF;">
+                        </div>
+                        <div class="form-group">
+                            <label for="modelModal1">Model (optional):</label>
+                            <input type="text" class="form-control" id="modelModal1" style="background-color: #0A192F; color: #E0E0E0; border: 1px solid #00A8FF;">
+                        </div>
+                        <div class="form-group">
+                            <label for="yearModal1">Year (optional):</label>
+                            <input type="text" class="form-control" id="yearModal1" style="background-color: #0A192F; color: #E0E0E0; border: 1px solid #00A8FF;">
+                        </div>
+                    </div>
+                    <button id="addVehicleBtnModal" class="btn btn-secondary">Add Another Vehicle</button>
+                </form>
+            </div>
+            <div class="modal-footer" style="border-top: 1px solid #0A192F;">
+                <button type="submit" form="vehicleFormModal" class="btn btn-custom-accent">Link Vehicles</button>
+            </div>
+        </div>
+    </div>
+</div>  
+
+</body>
+</html>
