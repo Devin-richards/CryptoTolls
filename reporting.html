@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reporting & Analytics - Crypto Tolls</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dark-theme.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Page-specific styles can be added here if necessary */
+        .content-section ul {
+            list-style: none; /* Remove default bullets */
+            padding-left: 0;
+        }
+        .content-section ul li {
+            position: relative;
+            padding-left: 1.5em; /* Space for custom bullet */
+            margin-bottom: 0.5em;
+        }
+        .content-section ul li::before {
+            content: "\\2022"; /* Unicode bullet character */
+            color: #00A8FF; /* Accent color for bullets */
+            font-weight: bold;
+            display: inline-block;
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <a class="navbar-brand" href="index.html">Crypto Tolls</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="technology.html">Technology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tokenization.html">Tokenization</a></li>
+                    <li class="nav-item"><a class="nav-link" href="compliance.html">Compliance</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="reporting.html">Reporting <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="future.html">The Future</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#createAccountModal">Create Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#linkVehicleModal">Link Vehicle</a></li>
+                    <li class="nav-item">
+                        <button id="connectXumm" class="btn btn-outline-light ml-2">
+                            <img src="XRPL Logo Kit 2/svg/XRP Ledger - Purple Lettering.svg" alt="XRP Ledger Logo" style="width: 100px; height: auto;">
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Advanced Reporting & Analytics</h1>
+        </div>
+    </div>
+
+    <main class="container mt-5">
+        <section class="content-section text-center">
+            <p class="lead">Crypto Tolls provides powerful reporting and analytics tools designed to offer clarity, simplify compliance, and empower data-driven decisions for individuals, fleet managers, and authorities.</p>
+        </section>
+
+        <section id="revenue-reports" class="content-section">
+            <h2>Automated Tolling Revenue Reports</h2>
+            <p>Gain comprehensive insights into tolling revenue with our automated reporting system. These reports are designed for ease of understanding and provide detailed financial overviews.</p>
+            
+            <h3 class="mt-4">Key Revenue Reporting Features:</h3>
+            <ul>
+                <li>Regularly scheduled reports (daily, weekly, monthly) providing summaries of toll revenue.</li>
+                <li>Breakdowns of revenue by specific toll points, geographical regions, or vehicle classes.</li>
+                <li>Clear tracking of transaction volumes and payment methods.</li>
+                <li>Secure access to historical revenue data for trend analysis and forecasting.</li>
+            </ul>
+            
+            <h3 class="mt-4">Benefits:</h3>
+            <ul>
+                <li>Simplified accounting and financial reconciliation.</li>
+                <li>Enhanced transparency for stakeholders in tokenized infrastructure projects.</li>
+                <li>Efficient financial management for fleet operators.</li>
+            </ul>
+            <!-- TODO: Add mockups or examples of report dashboards/outputs for tolling revenue -->
+        </section>
+
+        <section id="compliance-stats" class="content-section">
+            <h2>Federal & State Compliance Statistics</h2>
+            <p>Our platform simplifies the process of meeting federal and state regulatory reporting requirements by generating detailed statistics and auditable records.</p>
+            
+            <h3 class="mt-4">Key Compliance Reporting Features:</h3>
+            <ul>
+                <li>Generation of reports on traffic volume and vehicle class distributions, as required for transportation planning and compliance.</li>
+                <li>Detailed transaction logs suitable for audit trails and verification purposes.</li>
+                <li>Ability to customize reports to meet specific jurisdictional or agency requirements (subject to platform capabilities).</li>
+                <li>Secure data archiving to ensure long-term availability of compliance records.</li>
+            </ul>
+
+            <h3 class="mt-4">Benefits:</h3>
+            <ul>
+                <li>Reduced administrative burden for meeting regulatory obligations.</li>
+                <li>Improved accuracy in compliance reporting.</li>
+                <li>Streamlined audit processes for authorities and operators.</li>
+            </ul>
+            <!-- TODO: Add mockups or examples of compliance statistics reports -->
+        </section>
+
+        <section id="data-security" class="content-section">
+            <h2>Data Security & Access Control</h2>
+            <p>All reporting data is handled with the utmost attention to security and confidentiality. Crypto Tolls employs robust security measures to protect sensitive information. Access to reports and analytics is managed through secure authentication and authorization protocols, ensuring that data is only accessible to authorized personnel or entities.</p>
+        </section>
+        
+        <section class="cta-section mt-4 mb-5">
+            <div class="container">
+                <p>Leverage the power of data with Crypto Tolls. <a href="contact.html" class="link-custom-accent">Contact us</a> to learn more about our reporting capabilities.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Create Account Modal -->
+    <div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="createAccountModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createAccountModalLabel">Create Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom-accent">Create Account</button>
+                    </form>
+                    <button type="button" class="btn btn-secondary custom-dark-theme mt-3" onclick="window.location.href='vehicle.html'">Go to Vehicle Linker</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Link Vehicle Modal -->
+    <div class="modal fade" id="linkVehicleModal" tabindex="-1" role="dialog" aria-labelledby="linkVehicleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="linkVehicleModalLabel">Link Vehicle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="vehicleFormModal">
+                        <div class="vehicle-section">
+                            <h6>Vehicle 1</h6>
+                            <div class="form-group">
+                                <label for="plateNumberModal1">Plate#:</label>
+                                <input type="text" class="form-control" id="plateNumberModal1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stateRegisteredModal1">State Registered In:</label>
+                                <input type="text" class="form-control" id="stateRegisteredModal1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="makeModal1">Make (optional):</label>
+                                <input type="text" class="form-control" id="makeModal1">
+                            </div>
+                            <div class="form-group">
+                                <label for="modelModal1">Model (optional):</label>
+                                <input type="text" class="form-control" id="modelModal1">
+                            </div>
+                            <div class="form-group">
+                                <label for="yearModal1">Year (optional):</label>
+                                <input type="text" class="form-control" id="yearModal1">
+                            </div>
+                        </div>
+                        <button type="button" id="addVehicleBtnModal" class="btn btn-secondary custom-dark-theme">Add Another Vehicle</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form="vehicleFormModal" class="btn btn-custom-accent">Link Vehicles</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compliance - Crypto Tolls</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="dark-theme.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        /* Page-specific styles can be added here if necessary */
+        /* .content-section h3 is already styled in dark-theme.css for about.html, 
+           we can use that or add a more specific/different one here if needed.
+           For now, assuming default h3 styling from bootstrap/dark-theme.css is acceptable.
+        */
+    </style>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+            <a class="navbar-brand" href="index.html">Crypto Tolls</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="technology.html">Technology</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tokenization.html">Tokenization</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="compliance.html">Compliance <span class="sr-only">(current)</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="reporting.html">Reporting</a></li>
+                    <li class="nav-item"><a class="nav-link" href="future.html">The Future</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <ul class="navbar-nav"> {/* These items should be on the right side of the navbar */}
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#createAccountModal">Create Account</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" data-toggle="modal" data-target="#linkVehicleModal">Link Vehicle</a></li>
+                    <li class="nav-item">
+                        <button id="connectXumm" class="btn btn-outline-light ml-2">
+                            <img src="XRPL Logo Kit 2/svg/XRP Ledger - Purple Lettering.svg" alt="XRP Ledger Logo" style="width: 100px; height: auto;">
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Commitment to Compliance & Regulatory Standards</h1>
+        </div>
+    </div>
+
+    <main class="container mt-5">
+        <section class="content-section text-center">
+            <p class="lead">Crypto Tolls is dedicated to operating at the highest levels of regulatory compliance and ethical standards. We understand the critical importance of adhering to legal frameworks for tolling, financial transactions, and data security. This page outlines our approach to key compliance areas.</p>
+        </section>
+
+        <section id="tolling-regulations" class="content-section">
+            <h2>Tolling Regulations & Standards</h2>
+            <p>Navigating the complex landscape of tolling regulations is paramount for providing a reliable and lawful service. Our platform is designed with these requirements at its core.</p>
+            
+            <h3>MAP-21 Compliance</h3>
+            <p>Crypto Tolls is designed to align with the relevant provisions of the Moving Ahead for Progress in the 21st Century Act (MAP-21), facilitating streamlined toll collection and management for interoperability and efficiency in federally-funded highway projects. We support electronic toll collection standards and data security measures as outlined by MAP-21 guidelines.</p>
+            <!-- TODO: User to provide more specific details or examples of MAP-21 alignment if available. -->
+            
+            <h3 class="mt-4">State & Federal Tolling Laws</h3>
+            <p>We proactively monitor and adapt to various state and federal tolling laws to ensure our services meet all necessary legal requirements across different jurisdictions. Our system architecture allows for flexibility in implementing region-specific rules and rate structures.</p>
+            <!-- TODO: User to list specific state/federal laws or provide more details if desired. -->
+            
+            <h3 class="mt-4">Commercial Fleet Operations</h3>
+            <p>For commercial fleet operators, maintaining compliance is crucial. Crypto Tolls offers features that help fleets manage toll expenses, access detailed transaction records, and simplify reporting in accordance with transportation regulations.</p>
+        </section>
+
+        <section id="financial-integrity" class="content-section">
+            <h2>Financial Integrity: KYC/AML Procedures</h2>
+            <p>To ensure the security of financial transactions and prevent illicit activities, particularly with the integration of tokenized assets and cryptocurrency payments, Crypto Tolls implements robust Know Your Customer (KYC) and Anti-Money Laundering (AML) procedures.</p>
+            
+            <h3>Know Your Customer (KYC)</h3>
+            <p>Our KYC process involves verifying the identity of our users to a reasonable standard, helping to prevent fraud and ensure that individuals are who they claim to be. This is a foundational step in securing our platform and complying with financial regulations.</p>
+            <!-- TODO: User to provide more specifics on the KYC process if details can be shared publicly. -->
+            
+            <h3 class="mt-4">Anti-Money Laundering (AML)</h3>
+            <p>We employ AML measures to detect and deter money laundering activities. This includes transaction monitoring and reporting suspicious activities as required by law, contributing to a safer financial ecosystem for all users.</p>
+            
+            <h3 class="mt-4">Data Privacy & Security in Compliance</h3>
+            <p>While undertaking KYC/AML procedures, we remain steadfast in our commitment to user data privacy and security. All personal information is handled in accordance with strict data protection regulations, ensuring that compliance does not come at the expense of user trust.</p>
+        </section>
+
+        <section id="audit-support" class="content-section">
+            <h2>Audit Support & System Transparency</h2>
+            <p>Crypto Tolls is built with transparency and auditability in mind. Our data systems are designed to generate comprehensive records and reports that can support internal reviews and federal or state audits. We are committed to providing clear, verifiable information to meet regulatory oversight requirements.</p>
+        </section>
+        
+        <section class="cta-section mt-4 mb-5">
+            <div class="container">
+                <p>For more detailed information on our compliance programs, please <a href="contact.html" class="link-custom-accent">contact our support team</a>.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Create Account Modal -->
+    <div class="modal fade" id="createAccountModal" tabindex="-1" role="dialog" aria-labelledby="createAccountModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createAccountModalLabel">Create Account</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="username">Username:</label>
+                            <input type="text" class="form-control" id="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password:</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <button type="submit" class="btn btn-custom-accent">Create Account</button>
+                    </form>
+                    <button type="button" class="btn btn-secondary custom-dark-theme mt-3" onclick="window.location.href='vehicle.html'">Go to Vehicle Linker</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Link Vehicle Modal -->
+    <div class="modal fade" id="linkVehicleModal" tabindex="-1" role="dialog" aria-labelledby="linkVehicleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="linkVehicleModalLabel">Link Vehicle</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="vehicleFormModal">
+                        <div class="vehicle-section">
+                            <h6>Vehicle 1</h6>
+                            <div class="form-group">
+                                <label for="plateNumberModal1">Plate#:</label>
+                                <input type="text" class="form-control" id="plateNumberModal1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stateRegisteredModal1">State Registered In:</label>
+                                <input type="text" class="form-control" id="stateRegisteredModal1" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="makeModal1">Make (optional):</label>
+                                <input type="text" class="form-control" id="makeModal1">
+                            </div>
+                            <div class="form-group">
+                                <label for="modelModal1">Model (optional):</label>
+                                <input type="text" class="form-control" id="modelModal1">
+                            </div>
+                            <div class="form-group">
+                                <label for="yearModal1">Year (optional):</label>
+                                <input type="text" class="form-control" id="yearModal1">
+                            </div>
+                        </div>
+                        <button type="button" id="addVehicleBtnModal" class="btn btn-secondary custom-dark-theme">Add Another Vehicle</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" form="vehicleFormModal" class="btn btn-custom-accent">Link Vehicles</button>
+                </div>
+            </div>
+        </div>
+    </div>  
+
+</body>
+</html>

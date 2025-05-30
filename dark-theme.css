@@ -241,3 +241,22 @@ a.link-custom-accent:hover, .content-section a:hover, .contact-info-item a:hover
 .form-check-label {
     color: #E0E0E0;
 }
+
+/* Consistent List Styling (e.g., for feature lists) */
+.content-section ul, .modal-body ul { /* Apply to lists in content sections and modals */
+    list-style: none; 
+    padding-left: 0;
+}
+.content-section ul li, .modal-body ul li {
+    position: relative;
+    padding-left: 1.5em; 
+    margin-bottom: 0.5em;
+}
+.content-section ul li::before, .modal-body ul li::before {
+    content: "\\2022"; /* Unicode bullet character */
+    color: #00A8FF; /* Accent color for bullets */
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    left: 0;
+}
