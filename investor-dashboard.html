@@ -42,9 +42,10 @@
                 <thead>
                     <tr>
                         <th>Toll Project</th>
-                        <th>Tokens Owned</th>
-                        <th>Current Value (USD)</th>
-                        <th>Expected APY</th>
+                        <th>Token ID</th>
+                        <th>Face Value (USD)</th>
+                        <th>Maturity Date</th>
+                        <th>Interest Rate</th>
                     </tr>
                 </thead>
                 <tbody id="investmentData">
@@ -75,17 +76,18 @@
             });
 
         // Fetch and display investment data
-        fetch('/api/investments')
+        fetch('/api/tokens')
             .then(response => response.json())
             .then(data => {
                 const investmentTable = document.getElementById('investmentData');
                 data.forEach(item => {
                     let row = investmentTable.insertRow();
                     row.innerHTML = `
-                        <td>${item.project}</td>
-                        <td>${item.tokens}</td>
-                        <td>$${item.value}</td>
-                        <td>${item.apy}</td>
+                        <td>${item.projectId.name}</td>
+                        <td>${item.tokenId}</td>
+                        <td>$${item.faceValue}</td>
+                        <td>${new Date(item.maturityDate).toLocaleDateString()}</td>
+                        <td>${item.interestRate}%</td>
                     `;
                 });
             });

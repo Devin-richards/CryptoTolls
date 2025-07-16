@@ -7,7 +7,16 @@
     "start": "node server.js"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.16.3",
+    "xrpl": "^2.2.1",
     "xrpl-client": "^2.0.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "mongodb-memory-server": "^8.4.2",
+    "supertest": "^6.3.4"
   }
 }
