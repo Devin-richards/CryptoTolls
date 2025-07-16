@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Tolls - Investors</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            width: 80%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Crypto Tolls</a>
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="how-it-works.html">How It Works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="vehicle.html">Link Vehicle</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="investors.html">Investors</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-4">
+        <h1 class="text-center">Investor Dashboard</h1>
+        <p class="text-center">Monitor the performance of your toll-backed debt tokens.</p>
+
+        <div class="chart-container">
+            <canvas id="revenueChart"></canvas>
+        </div>
+
+        <div class="mt-5">
+            <h2 class="text-center">Your Investments</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Toll Project</th>
+                        <th>Tokens Owned</th>
+                        <th>Current Value (USD)</th>
+                        <th>Expected APY</th>
+                    </tr>
+                </thead>
+                <tbody id="investmentData">
+                    <!-- Data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <script>
+        // Fetch and display revenue data
+        fetch('/api/revenue')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('revenueChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: data.labels,
+                        datasets: [{
+                            label: 'Toll Revenue (in thousands USD)',
+                            data: data.data,
+                            borderColor: 'blue',
+                            fill: false
+                        }]
+                    }
+                });
+            });
+
+        // Fetch and display investment data
+        fetch('/api/investments')
+            .then(response => response.json())
+            .then(data => {
+                const investmentTable = document.getElementById('investmentData');
+                data.forEach(item => {
+                    let row = investmentTable.insertRow();
+                    row.innerHTML = `
+                        <td>${item.project}</td>
+                        <td>${item.tokens}</td>
+                        <td>$${item.value}</td>
+                        <td>${item.apy}</td>
+                    `;
+                });
+            });
+    </script>
+</body>
+</html>

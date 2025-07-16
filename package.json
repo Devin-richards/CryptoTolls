@@ -1,0 +1,13 @@
+{
+  "name": "crypto-tolls",
+  "version": "1.0.0",
+  "description": "A platform for on-chain tolling and debt financing on the XRP Ledger.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "xrpl-client": "^2.0.0"
+  }
+}
